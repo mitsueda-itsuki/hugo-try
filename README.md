@@ -1,3 +1,9 @@
+# What is this repository
+
+Hugoを使ってみる -> 試した機能をReadmeにまとめる
+
+というリポジトリ。
+
 # Hugo
 
 Go製のSSG。とにかく速い。
