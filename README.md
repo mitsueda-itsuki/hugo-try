@@ -83,3 +83,28 @@ hugo -D
 ```
 
 とすると `draft: true` を無視して生成する。
+
+# ShortCode
+
+content以下のmdファイル内から呼び出せ、HTMLを埋め込むことができる。
+
+## 呼び出し方
+
+{{< shortcode parameter >}}
+
+## Named Parameter
+
+`=` でparameterを渡す。
+
+{{< shortcode param_f="val1" param_s="val2" >}}
+
+## Paired ShortCode
+
+{{< shortcode >}}
+.
+.
+.
+{{< /shortcode >}}
+
+## 自作ショートコード
+
