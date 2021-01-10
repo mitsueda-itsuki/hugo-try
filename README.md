@@ -96,21 +96,78 @@ content以下のmdファイル内から呼び出せ、HTMLを埋め込むこと�
 
 ## 呼び出し方
 
+```
 {{< shortcode parameter >}}
+```
 
 ## Named Parameter
 
 `=` でparameterを渡す。
 
+```
 {{< shortcode param_f="val1" param_s="val2" >}}
+```
 
 ## Paired ShortCode
 
+```
 {{< shortcode >}}
 .
 .
 .
 {{< /shortcode >}}
+```
 
 ## 自作ショートコード
 
+`/layouts/shortcodes` 以下に `****.html` という風に作成する。
+
+```original_shortcode.html
+<h1>Rendered from `original_shortcode` !</h1>
+```
+
+呼び出すときは
+
+```first_post.md
+{{< original_shortcode >}}
+```
+
+## Parameter
+
+パラメーターは以下のようにして渡す。
+
+```
+{{< helloshortcode green hello-world >}}
+```
+
+取り出しは以下のようにする。
+
+```/layouts/shortcodes/helloshortcode
+<h1 style="color: {{ .Get 0 }};">
+  {{ .Get 1 }}
+</h1>
+```
+
+Named Parameterでは
+
+```/layouts/shortcodes/namedshortcode
+<p style="background-color: {{ .Get `bg` }};">
+  {{ .Get `text` }}
+</p>
+```
+
+のようにして取り出す。
+
+### Inner Parameter
+
+```/layouts/shortcodes/inner-param.html
+<h1 style="color: blue;">
+  {{ .Inner }}
+</h1>
+```
+
+```inner.md
+{{< inner-param >}}
+This is a inner text.
+{{< /inner-param >}}
+```
