@@ -1,0 +1,9 @@
+<h1>{{ $.Site.Title }}</h1>
+
+<ul>
+  {{ range $.Site.Params.hololive_en }}
+    <li>
+      {{- . -}}
+    </li>
+  {{ end }}
+</ul>

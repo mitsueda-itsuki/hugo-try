@@ -2,3 +2,13 @@ baseURL = "http://example.org/"
 languageCode = "ja-jp"
 title = "Hugo Try"
 theme = "mainroad"
+
+[params]
+  author = "panorama"
+  hololive_en = [
+    "Gawr Gura",
+    "Takanashi Kiara",
+    "Mori Calliope",
+    "Ninomae Ina'nis",
+    "Watson Amelia"
+  ]

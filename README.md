@@ -171,3 +171,65 @@ Named Parameterでは
 This is a inner text.
 {{< /inner-param >}}
 ```
+
+### Front matterのParamを使う
+
+```title-and-date.html
+<h2>Date: {{ $.Page.Params.date }}</h2>
+<h2>Title: {{ $.Page.Params.title }}</h2>
+```
+
+### ConfigのParamを使う
+
+```config.toml
+baseURL = "http://example.org/"
+languageCode = "ja-jp"
+title = "Hugo Try"
+subtitle = "hugo-try"
+theme = "mainroad"
+
+[params]
+  author = "panorama"
+  hololive_en = [
+    "Gawr Gura",
+    "Takanashi Kiara",
+    "Mori Calliope",
+    "Ninomae Ina'nis",
+    "Watson Amelia"
+  ]
+```
+
+上記に対して
+
+`{{ $.Site.Title }}` や `{{ $.Site.Params.author }}` のようにして参照できる。
+
+```/content/post/config-params.md
+<h1>{{ $.Site.Title }}</h1>
+
+<ul>
+  {{ range $.Site.Params.hololive_en }}
+    <li>
+      {{ . }}
+    </li>
+  {{ end }}
+</ul>
+
+```
+
+### Private ShortCode
+
+```/layouts/shortcodes/private-memo.html
+{{ if .Site.IsServer }}
+  <p>{{ .Inner }}</p>
+{{ end }}
+```
+
+```/content/post/memo.md
+.
+.
+.
+
+{{< private-memo >}}
+  This is a memo.
+{{< /private-memo >}}
+```
