@@ -233,3 +233,15 @@ theme = "mainroad"
   This is a memo.
 {{< /private-memo >}}
 ```
+
+### Syntax Highlight
+
+PygmentsによるSyntax Highlight
+
+```config.toml
+pygmentsCodeFences = true
+```
+
+あるいは
+
+`highlight`ショートコードだとより細かい設定もできる。

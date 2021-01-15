@@ -2,6 +2,7 @@ baseURL = "http://example.org/"
 languageCode = "ja-jp"
 title = "Hugo Try"
 theme = "mainroad"
+pygmentsCodeFences = true
 
 [params]
   author = "panorama"
