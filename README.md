@@ -245,3 +245,27 @@ pygmentsCodeFences = true
 あるいは
 
 `highlight`ショートコードだとより細かい設定もできる。
+
+# 設定
+
+## サマリーの設定
+
+```
+hasCJKLanguage = true
+```
+
+日本語の記事だと初期設定でサマリーが長くなってしまう。
+カウントをうまくやるために `hasCJKLanguage` を `true` にしておく。
+
+## 相対パスの有効化
+
+`/hoge/fuga` をリンクにしたとき、相対パスにならない。
+`relativeurls` を `true` にしておくとリンクがあるページからの相対パスとして認識される。
+
+```
+relativeurls = true
+```
+
+# Template
+
+WIP

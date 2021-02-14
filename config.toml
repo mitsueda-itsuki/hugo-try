@@ -3,6 +3,7 @@ languageCode = "ja-jp"
 title = "Hugo Try"
 theme = "mainroad"
 pygmentsCodeFences = true
+hasCJKLanguage = true
 
 [params]
   author = "panorama"
